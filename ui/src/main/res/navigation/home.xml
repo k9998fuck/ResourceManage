@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.k9998.resource.ui.fragment.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/gotoResourceListFragment"
+            app:destination="@id/resourceListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resourceListFragment"
+        android:name="com.k9998.resource.ui.fragment.ResourceListFragment"
+        android:label="HomeFragment">
+
+        <argument
+            android:name="resourceType"
+            app:argType="android.os.Parcelable" />
+
+        <action
+            android:id="@+id/gotoResourceFragment"
+            app:destination="@id/resourceFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/resourceFragment"
+        android:name="com.k9998.resource.ui.fragment.ResourceFragment"
+        android:label="HomeFragment">
+
+        <argument
+            android:name="resource"
+            app:argType="android.os.Parcelable" />
+
+    </fragment>
+
+</navigation>
